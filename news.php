@@ -63,8 +63,6 @@ session_start();
                     exit();
                 }
 
-               
-                
                 // Etape 2: Poser une question à la base de donnée et récupérer ses informations
                 // cette requete vous est donnée, elle est complexe mais correcte, 
                 // si vous ne la comprenez pas c'est normal, passez, on y reviendra
@@ -118,7 +116,7 @@ session_start();
                             <?php
                             $tags = explode('#', $post['taglist']);
                             foreach ($tags as $tag) {
-                                echo "<a href='#'>$tag</a> ";
+                                echo "<a href='#'>$tag</a>, ";
                             }
                             ?>
                         </footer>
