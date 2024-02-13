@@ -3,7 +3,8 @@ session_start();
 
 // Vérifier si l'utilisateur est connecté
 if (!isset($_SESSION['connected_id'])) {
-    echo json_encode(['error' => 'Vous devez être connecté pour aimer un commentaire']);
+    header("Location: login.php");
+    echo json_encode(['404 erreur' => 'Vous devez etre connecter pour aimer un commentaire']);
     exit();
 }
 

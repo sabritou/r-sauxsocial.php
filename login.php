@@ -80,6 +80,7 @@ session_start();
                              // Etape 7 : Se souvenir que l'utilisateur s'est connecté pour la suite
                             // documentation: https://www.php.net/manual/fr/session.examples.basic.php
                             $_SESSION['connected_id']=$user['id']; exit();
+                            $_SESSION['status']="Active";
                         }
                     }
                     ?>                     

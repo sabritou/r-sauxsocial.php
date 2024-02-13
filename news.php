@@ -1,7 +1,11 @@
-<?php
+<?php 
 session_start();
-
+if ($_SESSION['status']=="Active")
+{
+    header("Location: login.php");
+}
 ?>
+
 
 
 
@@ -34,6 +38,8 @@ session_start();
                     <li><a href="subscriptions.php">Mes abonnements</a></li>
                     <li><a href="login.php">Login</a></li>
                     <li><a href="registration.php">Inscription</a></li>
+                    <li><a href="logout.php">Déconnexion</a></li>
+
                 </ul>
             </nav>
         </header>
