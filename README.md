@@ -1,6 +1,4 @@
-ReadMe -
-English: 
-ReadMe - Social Network Project
+ ReadMe - Social Network Project
 This social network project was developed by utilizing a partial code base which we improved, completed, and debugged. We added new features, enhanced existing functionalities, and worked on the user interface to provide an enriched user experience.
 
 Added Features
