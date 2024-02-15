@@ -1,6 +1,6 @@
 <?php 
 session_start();
-if ($_SESSION['status']=="Active")
+if (!$_SESSION['status']=="Active")
 {
     header("Location: login.php");
 }
@@ -31,14 +31,11 @@ if ($_SESSION['status']=="Active")
                 <a href="userpedpost.php">Post</a>
             </nav>
             <nav id="user">
-                <a href="#">▾ Profil</a>
+                <a href="#">Profil</a>
                 <ul>
                     <li><a href="settings.php">Paramètres</a></li>
                     <li><a href="followers.php">Mes suiveurs</a></li>
                     <li><a href="subscriptions.php">Mes abonnements</a></li>
-                    <li><a href="login.php">Login</a></li>
-                    <li><a href="registration.php">Inscription</a></li>
-                    <li><a href="logout.php">Déconnexion</a></li>
 
                 </ul>
             </nav>
@@ -116,22 +113,60 @@ if ($_SESSION['status']=="Active")
                             <small>
                                 <form action="like_comment.php" method="post">
                                     <input type="hidden" name="post_id" value="<?php echo $post['id']; ?>">
-                                    <button type="submit" name="like">♥</button> <?php echo $post['like_number']; ?>
+                                    <button type="submit" name="like" class='connexion'>♥</button> <?php echo $post['like_number']; ?>
                                 </form>
                             </small>
+
+
+
+
                             <?php
-                            $tags = explode('#', $post['taglist']);
-                            foreach ($tags as $tag) {
-                                echo "<a href='#'>$tag</a>, ";
-                            }
+                            // Récupération du nombre de réponses à ce post
+                            $repliesSQL = "SELECT COUNT(*) as count FROM posts WHERE parent_id = " . $post['id'];
+                            $repliesResult = $mysqli->query($repliesSQL);
+                            $repliesRow = $repliesResult->fetch_assoc();
+                            if ($repliesRow['count'] > 0) :
                             ?>
+                                <small>
+                                    <button class="show_replies_button" onclick="toggleReplies(<?php echo $post['id']; ?>)">Montrer les réponses</button>
+                                </small>
+                            <?php else : ?>
+                                <small>
+                                    <button class="reply_button" onclick="toggleReplyForm(<?php echo $post['id']; ?>)">Commenter</button>
+                                </small>
+                            <?php endif; ?>
+                            <div class="reply-form-container" id="replyForm_<?php echo $post['id']; ?>">
+                        <form method="post" action="reply_comment.php">
+                            <input type="hidden" name="parent_id" value="<?php echo $post['id']; ?>">
+                            <input type="hidden" name="user_id" value="<?php echo $_SESSION['connected_id']; ?>">
+                            <textarea name="reply_content" placeholder="Répondre à ce message..." required></textarea>
+                            <br>
+                            <button type="submit" name="reply_button">Envoyer</button>
+                        </form>
+                    </div>
                         </footer>
                     </article>
-                    <?php
-                }
+                <?php
+                } // Fermeture de la boucle while
                 ?>
-                
-            </main>
-        </div>
-    </body>
-</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

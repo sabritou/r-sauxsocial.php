@@ -1,6 +1,7 @@
 <?php
 session_start();
 ?>
+
 <!doctype html>
 <html lang="fr">
     <head>
@@ -19,16 +20,6 @@ session_start();
                 <a href="tags.php?tag_id=1">Mots-clés</a>
                 <a href="userpedpost.php">Post</a>
             </nav>
-            <nav id="user">
-                <a href="#">▾ Profil</a>
-                <ul>
-                    <li><a href="settings.php">Paramètres</a></li>
-                    <li><a href="followers.php">Mes suiveurs</a></li>
-                    <li><a href="subscriptions.php">Mes abonnements</a></li>
-                    <li><a href="login.php">Login</a></li>
-                    <li><a href="registration.php">Inscription</a></li>
-                </ul>
-            </nav>
         </header>
         <div id="wrapper" class='profile'>
 
@@ -36,9 +27,7 @@ session_start();
             <aside>
                 <img src="user.png" alt="Portrait de l'utilisatrice"/>
                 <section>
-                    <h3>Présentation</h3>
-                    <p>Sur cette page vous trouverez les informations de l'utilisatrice
-                        n° <?php echo intval($_SESSION['connected_id']) ?></p>
+                    <h3>Profil</h3>
 
                 </section>
             </aside>
@@ -86,6 +75,14 @@ session_start();
                 //@todo: afficher le résultat de la ligne ci dessous, remplacer les valeurs ci-après puis effacer la ligne ci-dessous
             
                 ?>                
+
+                <article class="Information">
+                 <dl>
+                    <a id="ok" href="followers.php">Followers</a>
+                    <a href="subscription.php">Suivi(e)s</a>
+                    <a href="wall.php">Publications</a>
+                 </dl>
+                </article>
                 <article class='parameters'>
                     <h3>Mes paramètres</h3>
                     <dl>
@@ -102,6 +99,18 @@ session_start();
                     </dl>
 
                 </article>
+                <article class='connexion'>
+                    <h1>Connexion</h1>
+                    <dl>
+                        <button class="btn_login"onclick="location.href='login.php'">Connexion a un autre compte.</button>
+                    </dl>
+                    <dl>
+                        <button class="btn_logout" onclick="location.href='logout.php'">Deconnexion</button>
+                    </dl>
+
+                </article>
+
+            
             </main>
         </div>
     </body>

@@ -1,13 +1,18 @@
 body{
-    background-color: rgb(47, 47, 47);
+    background-color: rgb(255, 255, 255);
     font-family: Arial;
 }
 
-a{text-decoration: none; color:rgb(0, 0, 0);}
-a:hover{text-decoration: underline;}
+a{text-decoration: none; 
+    color:rgb(0, 0, 0);
+}
+a:hover{
+    text-decoration: underline;
+}
 
 body>header{
-    background-color: rgb(246, 219, 177);
+    background-color: rgb(255, 255, 255);
+    border: none;
     display:flex;
     width:80em;
     margin:0 auto 2em auto;    
@@ -21,24 +26,26 @@ body>header #menu {
     display:flex;
     width:50%;
     align-items: stretch;
-    border-left: 1px solid rgb(173, 173, 255);
+    border-left: 1px solid rgb(255, 255, 255);
 }
 body>header #menu a{
     flex:1;
     text-align: center;
     padding-top:2em;
-    border-right: 1px solid rgb(191, 191, 240);
+    border-right: 1px solid rgb(255, 255, 255);
 }
 body>header a:hover
 {
-    background-color: rgb(246, 219, 177);
+    background-color: rgb(189, 189, 189);
 }
 body>header ul{list-style: none;}
 body>header #user
 {
+    border: none;
     margin-left: auto;
     flex:0.2;
-    border-left: 1px solid #483D8B;
+    border-left: 2px solid rgb(255, 255, 255);
+    border-radius: 12px;
 }
 body>header #user>a{
     display:block;
@@ -53,7 +60,7 @@ body>header #user ul{
     margin:0;
     margin-left:-5em;
     background-color: #ffffff;
-    border: 1px solid #99b;
+    border: 1px solid rgb(188, 188, 188);
 
     z-index: 1;
 }
@@ -74,10 +81,16 @@ body>header #user:hover ul{
     margin:0 auto 2em auto;
 }
 #wrapper aside{
-    background-color: rgb(246, 219, 177);
+    background-color: rgb(213, 213, 213);
     flex:1;
     padding:1em;
-    border-radius: 1em;    
+    border: none;
+    border-radius: 1em;  
+    transition-duration: 1s;
+}
+
+#wrapper aside:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 #wrapper aside img{
     display: block;
@@ -92,10 +105,15 @@ body>header #user:hover ul{
     overflow-y:  scroll;
 }
 #wrapper main article{
-    background-color: rgb(216, 215, 196);
-    padding:1em;
-    margin-bottom: 1em ;
+    background-color: rgb(188, 188, 188);
+    padding:3em;
+    margin-bottom: 2em ;
     border-radius: 1em;
+    transition-duration: 1s;
+}
+
+#wrapper main article:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 #wrapper main article h3{
     margin:0;
@@ -154,3 +172,114 @@ body>header #user:hover ul{
 pre{
     color:#ffffff;
 }
+
+.btn_login{
+    background-color : rgb(104, 104, 240);
+    border: none;
+    color: white;
+    padding: 13px 22px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+}
+.btn_login:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+}
+
+.btn_logout{
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 13px 22px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+}
+.btn_logout:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.connexion{
+    color: rgb(255, 255, 255);
+    border: none;
+    background-color: rgb(65, 65, 250);
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 6px 12px;  
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.connexion:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+body header nav a {
+    transition-duration: 1s;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    list-style-type: none;
+    display: inline;
+}
+
+body header nav a:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.navbar li {
+    float: left;
+}
+
+/* 
+#wrapper{
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    bottom: 20%;
+    left: 35%;
+    margin-left:-150px;
+    margin-top:150px;
+    padding: 230px;
+    text-align:justify;
+    transition-duration: 0.4s;
+    
+}
+
+#wrapper1{
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    bottom: 20%;
+    left: 35%;
+    margin-left:-150px;
+    margin-top:150px;
+    padding: 230px;
+    text-align:justify;
+    transition-duration: 0.4s; */
+    
+
+
+
+/* .h8{
+    text-align: center;
+}
+
+.followers{
+    color: rgb(255, 15, 15);
+    text-align: auto;
+    
+}
+
+.Suivies{
+    text-align: center;
+} */

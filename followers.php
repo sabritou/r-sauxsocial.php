@@ -21,13 +21,11 @@ session_start();
                 <a href="userpedpost.php">Post</a>
             </nav>
             <nav id="user">
-                <a href="#">▾ Profil</a>
+                <a href="#">Profil</a>
                 <ul>
                     <li><a href="settings.php">Paramètres</a></li>
                     <li><a href="followers.php">Mes suiveurs</a></li>
                     <li><a href="subscriptions.php">Mes abonnements</a></li>
-                    <li><a href="login.php">Login</a></li>
-                    <li><a href="registration.php">Inscription</a></li>
                 </ul>
             </nav>
         </header>
@@ -35,7 +33,7 @@ session_start();
             <aside>
                 <img src = "user.png" alt = "Portrait de l'utilisatrice"/>
                 <section>
-                    <h3>Présentation</h3>
+                    <h1>Followers</h1>
                     <p>Sur cette page vous trouverez la liste des personnes qui
                         suivent les messages de l'utilisatrice
                         n° <?php echo intval($_SESSION['connected_id']) ?></p>
@@ -72,6 +70,8 @@ session_start();
                 </article>
 
                 <?php } ?>
+
+
             </main>
         </div>
     </body>

@@ -12,23 +12,12 @@ session_start();
     <body>
         <header>
             <img src="user.png" alt="root"/>
-            <nav id="menu">
-              
-            </nav>
-            <nav id="user">
-                <a href="#">▾ Profil</a>
-                <ul>
-                    <li><a href="login.php">Login</a></li>
-                    <li><a href="registration.php">Inscription</a></li>
-                </ul>
-
-            </nav>
         </header>
 
         <div id="wrapper" >
 
             <aside>
-                <h2>Présentation</h2>
+                <h2>Connexion</h2>
                 <p>Bienvenu sur notre réseau social.</p>
             </aside>
             <main>
@@ -70,17 +59,23 @@ session_start();
                         // Etape 6: Vérification de l'utilisateur
                         $res = $mysqli->query($lInstructionSql);
                         $user = $res->fetch_assoc();
-                        if ( ! $user OR $user["password"] != $passwdAVerifier)
+
+
+
+                        if ( ! $user ){
+                            echo "Vous n'êtes pas connecté(e)";
+                        }
+                        elseif ($user["password"] != $passwdAVerifier AND mb_strlen($passwdAVerifier, 'UTF-8') != 0)
                         {
-                            echo "La connexion a échouée. ";
-                            
+                            echo "Le mot de passe est faux ";
                         } else
                         {
                             header("Location: news.php");
                              // Etape 7 : Se souvenir que l'utilisateur s'est connecté pour la suite
                             // documentation: https://www.php.net/manual/fr/session.examples.basic.php
-                            $_SESSION['connected_id']=$user['id']; exit();
                             $_SESSION['status']="Active";
+                            $_SESSION['connected_id']=$user['id']; exit();
+                            
                         }
                     }
                     ?>                     
@@ -92,10 +87,10 @@ session_start();
                             <dt><label for='motpasse'>Mot de passe</label></dt>
                             <dd><input type='password'name='motpasse'></dd>
                         </dl>
-                        <input type='submit'>
+                        <input type='submit' class='connexion' value='se connecter'>
                     </form>
                     <p>
-                        Pas de compte?
+                        <h1>Pas de compte?</h1>
                         <a href='registration.php'>Inscrivez-vous.</a>
                     </p>
 

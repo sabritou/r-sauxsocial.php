@@ -27,23 +27,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 
-    // Vérifier si l'utilisateur a déjà aimé ce commentaire
     $check_like_sql = "SELECT * FROM likes WHERE post_id = $post_id AND user_id = $user_id";
+    $check_dislike_sql = "SELECT * FROM dislike WHERE post_id = $post_id AND user_id = $user_id";
     $check_like_result = $mysqli->query($check_like_sql);
-
-    // Si l'utilisateur n'a pas déjà aimé ce commentaire, ajouter le like
-    if ($check_like_result->num_rows == 0) {
-        $sql = "INSERT INTO likes (post_id , user_id) VALUES ($post_id , $user_id)";
+    $check_dislike_result = $mysqli->query($check_dislike_sql);
+    
+    // Si l'utilisateur a déjà liké ou disliké le commentaire, supprimer l'action existante
+    if ($check_like_result->num_rows > 0 || $check_dislike_result->num_rows > 0) {
+        $delete_sql = "DELETE FROM likes WHERE post_id = $post_id AND user_id = $user_id";
+        $mysqli->query($delete_sql);
+        $delete_sql = "DELETE FROM dislike WHERE post_id = $post_id AND user_id = $user_id";
+        $mysqli->query($delete_sql);
+        $action = 0; // Indique qu'aucune action n'a été effectuée
+    } else {
+        // Ajouter l'action de like
+        $sql = "INSERT INTO likes (post_id, user_id) VALUES ($post_id, $user_id)";
         $ok = $mysqli->query($sql);
         if (!$ok) {
             echo json_encode(['error' => 'Erreur lors de l\'ajout du like']);
             exit();
         }
-    } 
+        $action = 1; // Indique que l'action de like a été effectuée
+    }
 
-    // Rediriger l'utilisateur vers la page d'actualités après avoir aimé le commentaire
-    header("Location: news.php");
-    exit();
+ // Rediriger l'utilisateur vers la page d'actualités après avoir aimé le commentaire
+ header("Location: ".$_SERVER['HTTP_REFERER']."?action=$action#post-$post_id");
+exit();
+   
 
 } else {
     // Affichage du formulaire de commentaire si la méthode n'est pas POST

@@ -20,13 +20,11 @@ session_start();
                 <a href="userpedpost.php">Post</a>
             </nav>
             <nav id="user">
-                <a href="#">▾ Profil</a>
+                <a href="#">Profil</a>
                 <ul>
                     <li><a href="settings.php">Paramètres</a></li>
                     <li><a href="followers.php">Mes suiveurs</a></li>
                     <li><a href="subscriptions.php">Mes abonnements</a></li>
-                    <li><a href="login.php">Login</a></li>
-                    <li><a href="registration.php">Inscription</a></li>
                 </ul>
             </nav>
         </header>
@@ -34,7 +32,7 @@ session_start();
         <div id="wrapper" >
 
             <aside>
-                <h2>Présentation</h2>
+                <h2>Post</h2>
                 <p>Sur cette page on peut poster un message</p>
             </aside>
             <main>
@@ -102,17 +100,17 @@ session_start();
                     <form action="userpedpost.php" method="post">
                         <input type='hidden' name='???' value='achanger'>
                         <dl>
-                            <dt><label for='auteur'>Auteur</label></dt>
+                            <dt><label for='auteur'></label></dt>
                             <dd><select name='auteur'>
-                                    <?php
+                            <?php
                                     foreach ($listAuteurs as $id => $alias)
                                         echo "<option value='$id'>$alias</option>";
                                     ?>
                                 </select></dd>
-                            <dt><label for='message'>Message</label></dt>
+                            <dt><label for='message'><h1>Message</h1></label></dt>
                             <dd><textarea name='message'></textarea></dd>
                         </dl>
-                        <input type='submit'>
+                        <input type='submit' class='connexion'>
                     </form>               
                 </article>
             </main>

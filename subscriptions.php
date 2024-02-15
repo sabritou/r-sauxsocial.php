@@ -20,13 +20,11 @@ session_start();
                 <a href="userpedpost.php">Post</a>
             </nav>
             <nav id="user">
-                <a href="#">▾ Profil</a>
+                <a href="#">Profil</a>
                 <ul>
                     <li><a href="settings.php">Paramètres</a></li>
                     <li><a href="followers.php">Mes suiveurs</a></li>
                     <li><a href="subscriptions.php">Mes abonnements</a></li>
-                    <li><a href="login.php">Login</a></li>
-                    <li><a href="registration.php">Inscription</a></li>
                 </ul>
             </nav>
         </header>
