@@ -88,7 +88,7 @@ if (!$_SESSION['status']=="Active")
                 // NB: à chaque tour du while, la variable post ci dessous reçois les informations du post suivant.
                 while ($post = $lesInformations->fetch_assoc()) {
                     ?>
-                    <article>
+                    <article id="post-<?php echo $post['id']; ?>">
                         <h3>
                             <time><?php echo $post['created'] ?></time>
                         </h3>
