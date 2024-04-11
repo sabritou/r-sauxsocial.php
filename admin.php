@@ -92,7 +92,7 @@
                  * Etape 5 : @todo : Afficher les utilisatrices en s'inspirant de ce qui a été fait dans news.php
                  * Attention à en pas oublier de modifier dans le lien les "user_id=123" avec l'id de l'utilisatrice
                  */
-                while ($users = $lesInformations->fetch_assoc())
+                while ($users = $lesInformations->fetch_assoc()) // si vous avez une table avec des colonnes "id", "nom" et "âge", fetch_assoc() récupérera une ligne de données et la retournera sous la forme d'un tableau associatif où vous pouvez accéder aux valeurs par les clés "id", "nom" et "âge".
                 {
                     
                     ?>

@@ -5,7 +5,7 @@ session_start();
 <html lang="fr">
     <head>
         <meta charset="utf-8">
-        <title>ReSoC - Flux</title>         
+        <title>ReSoC Flux</title>         
         <meta name="author" content="Julien Falconnet">
         <link rel="stylesheet"  href="style.css"/>
     </head>
@@ -79,7 +79,7 @@ session_start();
                     users.alias as author_name,  
                     count(likes.id) as like_number,  
                     GROUP_CONCAT(DISTINCT tags.label) AS taglist 
-                    FROM followers 
+                    FROM posts
                     JOIN users ON users.id=followers.followed_user_id
                     JOIN posts ON posts.user_id=users.id
                     LEFT JOIN posts_tags ON posts.id = posts_tags.post_id  
