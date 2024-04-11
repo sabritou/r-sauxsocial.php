@@ -17,7 +17,7 @@ session_start();
         <div id="wrapper" >
 
             <aside>
-                <h2>Connexion</h2>
+                <h2>Resauc</h2>
                 <p>Bienvenu sur notre réseau social.</p>
             </aside>
             <main>

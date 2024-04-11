@@ -1,47 +1,24 @@
-ReadMe - Social Network Project :
+# SocialNetwork
 
-This social network project was developed by utilizing a partial code base which we improved, completed, and debugged. We added new features, enhanced existing functionalities, and worked on the user interface to provide an enriched user experience.
+Readme SocialNetwork :
 
-Added Features :
+La compréhension de SQL - Les bases !
 
-Improved Login and Signup: We enhanced the login and signup process by adding validation features and ensuring better error handling.
+1. Sélection de toutes les colonnes d'un tableau
 
-Logout and Switch Accounts: We added the ability for users to log out of their current account and switch to another account.
+SELECT *
+FROM employees;
 
-Social Interaction: We introduced "like" and "dislike" functionalities to allow users to express their appreciation for other users' posts.
+Ce mot-clé est suivi d'un astérisque (*), qui signifie "toutes les colonnes de la table".
 
-Comments: Users can now comment on posts, fostering interaction and engagement.
+Pour spécifier la table, utilisez la clause FROM et écrivez le nom de la table à la suite.
+2. Sélection d'une colonne d'une table
 
-Custom User Accounts: Each user can now create and customize their own account with a unique pseudonym and personalized interface.
+SELECT first_name
+FROM employees;
 
+On ajoute WHERE salary > 3800;
+Nous devons maintenant afficher uniquement les employés dont le salaire est supérieur à 3 800. Pour ce faire, vous devez utiliser WHERE. Il s'agit d'une clause qui accepte des conditions et qui est utilisée pour filtrer les résultats. Elle parcourt le tableau et renvoie uniquement les données qui satisfont à la condition.
 
-Upcoming Features :
-
-
-The project is currently undergoing architectural planning for the addition of new features, including:
-
-User Subscriptions: We plan to add the ability for users to subscribe to each other to follow their posts.
-Hashtag Functionality: We will integrate hashtag functionality to facilitate the discovery of relevant content.
-Interface Optimization and Performance: We are focusing on optimizing the user interface and performance to provide a smooth and fast experience.
-Languages and Technologies
-This project was developed using the following technologies:
-
-PHP: Used for backend logic, data manipulation, and user session management.
-CSS: Used for styling and formatting the user interface.
-MySQL: The MySQL database was used to store user data, posts, and comments.
-
-Collaborators :
-
-This project was realized in collaboration with:
-
-Sabri Kardaoui - @sabritou
-Lucas Feld - @feldlucas
-Maud Hué - @Maud6930
-
-Project Duration:
-
-The project was completed in 7 days, involving planning, development, testing, and finalization. Each team member brought their skills and expertise to advance the project efficiently.
-
-We hope this application provides an enriching social experience for its users, and we are open to any feedback or suggestions for further improvement.
-
-Feel free to contact us if you have any questions or suggestions for improvement for this project.
+Accès aux données de deux tables à l'aide d'une jointure interne (INNER JOIN)
+Ce type de requête est utilisé lorsque vous souhaitez accéder à des données provenant de deux tables ou plus

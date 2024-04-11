@@ -30,19 +30,14 @@ session_start();
         </header>
         <div id="wrapper">
             <?php
-            /**
-             * Cette page est similaire à wall.php ou feed.php 
-             * mais elle porte sur les mots-clés (tags)
-             */
-            /**
-             * Etape 1: Le mur concerne un mot-clé en particulier
-             */
+           
             $tagId = intval($_GET['tag_id']);
+
+
+
             ?>
             <?php
-            /**
-             * Etape 2: se connecter à la base de donnée
-             */
+           
             $mysqli = new mysqli("localhost", "root", "root", "socialnetwork");
             ?>
 

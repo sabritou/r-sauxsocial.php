@@ -53,10 +53,9 @@ session_start();
                 /**
                  * Etape 3: récupérer le nom de l'utilisateur
                  */                
-                $laQuestionEnSql = "SELECT * FROM users WHERE id= '$userId' ";
+                $laQuestionEnSql = "SELECT * FROM users WHERE id= '$userId' ";  //selectionne toute les colonnes de la tables users ou(avec accent) = userid
                 $lesInformations = $mysqli->query($laQuestionEnSql);
                 $user = $lesInformations->fetch_assoc();
-                //@todo: afficher le résultat de la ligne ci dessous, remplacer XXX par l'alias et effacer la ligne ci-dessous
                
                 ?>
                 <img src="user.png" alt="Portrait de l'utilisatrice"/>
