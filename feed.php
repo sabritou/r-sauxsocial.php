@@ -74,20 +74,20 @@ session_start();
                  * Etape 3: récupérer tous les messages des abonnements
                  */
                 $laQuestionEnSql = "
-                    SELECT posts.content,
-                    posts.created,
-                    users.alias as author_name,  
-                    count(likes.id) as like_number,  
-                    GROUP_CONCAT(DISTINCT tags.label) AS taglist 
-                    FROM posts
-                    JOIN users ON users.id=followers.followed_user_id
-                    JOIN posts ON posts.user_id=users.id
-                    LEFT JOIN posts_tags ON posts.id = posts_tags.post_id  
-                    LEFT JOIN tags       ON posts_tags.tag_id  = tags.id 
-                    LEFT JOIN likes      ON likes.post_id  = posts.id 
-                    WHERE followers.following_user_id='$userId' 
-                    GROUP BY posts.id
-                    ORDER BY posts.created DESC  
+                SELECT p.content,
+                p.created,
+                u.alias as author_name,  
+                count(l.id) as like_number,  
+                GROUP_CONCAT(DISTINCT t.label) AS taglist 
+                FROM followers f
+                JOIN users u ON u.id=f.followed_user_id
+                JOIN posts p ON p.user_id=u.id
+                LEFT JOIN posts_tags pt ON p.id = pt.post_id  
+                LEFT JOIN tags t       ON pt.tag_id  = t.id 
+                LEFT JOIN likes l      ON l.post_id  = p.id 
+                WHERE f.following_user_id='$userId' 
+                GROUP BY p.id
+                ORDER BY p.created DESC   
                     ";
                 $lesInformations = $mysqli->query($laQuestionEnSql);
                 if ( ! $lesInformations)

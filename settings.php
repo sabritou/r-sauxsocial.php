@@ -79,7 +79,7 @@ session_start();
                 <article class="Information">
                  <dl>
                     <a id="ok" href="followers.php">Followers</a>
-                    <a href="subscription.php">Suivi(e)s</a>
+                    <a href="subscriptions.php">Suivies</a>
                     <a href="wall.php">Publications</a>
                  </dl>
                 </article>
