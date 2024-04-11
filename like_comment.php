@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
  // Rediriger l'utilisateur vers la page d'actualités après avoir aimé le commentaire
- header("Location: ".$_SERVER['HTTP_REFERER']."?action=$action#post-$post_id");
+ header("Location: ".$_SERVER['HTTP_REFERER']."#post-$post_id");
 exit();
    
 

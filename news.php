@@ -138,13 +138,9 @@ if (!$_SESSION['status'] == "Active") {
                         $repliesRow = $repliesResult->fetch_all(MYSQLI_ASSOC);
                         if (count ($repliesRow) > 0) :
                         ?>
-                            <small>
-                                <button class="show_replies_button" onclick="toggleReplies(<?php echo $post['id']; ?>)">Montrer les réponses</button>
-                            </small>
-                        <?php else : ?>
-                            <small>
-                                <button class="reply_button" onclick="toggleReplyForm(<?php echo $post['id']; ?>)">Commenter</button>
-                            </small>
+                            
+                     
+                        
                         <?php endif; ?>
                         <div class="reply-form-container" id="replyForm_<?php echo $post['id']; ?>">
                     <form method="post" action="reply_comment.php">
