@@ -1,5 +1,5 @@
 <?php
-session_start();
+session_start(); //coucou
 
 // Vérifier si l'utilisateur est connecté
 if (!isset($_SESSION['connected_id'])) {
