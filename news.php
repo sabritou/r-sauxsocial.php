@@ -120,7 +120,13 @@ if (!$_SESSION['status'] == "Active") {
                     <h3>
                         <time><?php echo $post['created'] ?></time>
                     </h3>
-                    <address>par <?php echo $post['author_name'] ?></address>
+                    <address>
+    <form action="subscriptions.php" method="post">
+        <input type="hidden" name="user_id" value="<?php echo $post['author_id']; ?>">
+        <button type="submit" name="subscribe_button" class="connexion"><?php echo $post['author_name']; ?></button>
+    </form>
+</address>
+                    
                     <div>
                         <p><?php echo $post['content'] ?></p>
                     </div>

@@ -56,17 +56,57 @@ session_start();
                     GROUP BY users.id
                     ";
                 $lesInformations = $mysqli->query($laQuestionEnSql);
+
+// Afficher la requête SQL pour le débogage
+echo "Requête SQL : $insertQuery";
+
+// Insérer l'abonnement dans la base de données
+if ($mysqli->query($insertQuery) === TRUE) {
+    echo "Vous vous êtes abonné à cet utilisateur avec succès !";
+} else {
+    echo "Erreur lors de l'abonnement à cet utilisateur : " . $mysqli->error;
+}
+
+
+
+// Vérifier si l'utilisateur est déjà abonné à l'utilisateur à suivre
+$query = "SELECT * FROM followers WHERE followed_user_id = $userToFollowId AND following_user_id = $userId";
+$result = $mysqli->query($query);
+
+
+if ($result->num_rows > 0) {
+    echo "Vous êtes déjà abonné à cet utilisateur.";
+    exit;
+}
+
+// Insérer l'abonnement dans la base de données
+$insertQuery = "INSERT INTO followers (followed_user_id, following_user_id) VALUES ($userToFollowId, '$userId')";
+
+
+
+if ($mysqli->query($insertQuery) === TRUE) {
+    echo "Vous vous êtes abonné à cet utilisateur avec succès !";
+} else {
+    echo "Erreur lors de l'abonnement à cet utilisateur : " . $mysqli->error;
+}
+
+
+
+
+
                 // Etape 4: à vous de jouer
                 //@todo: faire la boucle while de parcours des abonnés et mettre les bonnes valeurs ci dessous 
                 while ($followers = $lesInformations->fetch_assoc())
                 {
 
                     ?>   
+
+
                 
             
                 <article>
                     <img src="user.png" alt="blason"/>
-                    <h3><?php echo $followers['alias'];?></h3>
+                    <h3> <?php echo $followers['alias']; ?></h3>
                 </article>
 
                 <?php } ?>
