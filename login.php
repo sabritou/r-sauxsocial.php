@@ -10,16 +10,11 @@ session_start();
         <link rel="stylesheet" href="style.css"/>
     </head>
     <body>
-        <header>
-            <img src="user.png" alt="root"/>
-        </header>
+       <center>
 
         <div id="wrapper" >
 
-            <aside>
-                <h2>Resauc</h2>
-                <p>Bienvenu sur notre réseau social.</p>
-            </aside>
+         
             <main>
                 <article>
                     <h2>Connexion</h2>
@@ -81,7 +76,7 @@ session_start();
                     ?>                     
                     <form action="login.php" method="post">
                         <input type='hidden'name='???' value='achanger'>
-                        <dl>
+                        <dl style="margin-right: 2rem;">
                             <dt><label for='email'>E-Mail</label></dt>
                             <dd><input type='email'name='email'></dd>
                             <dt><label for='motpasse'>Mot de passe</label></dt>
@@ -90,12 +85,13 @@ session_start();
                         <input type='submit' class='connexion' value='se connecter'>
                     </form>
                     <p>
-                        <h1>Pas de compte?</h1>
+                        <h1 style="margin-top: 5rem ;">Pas de compte ?</h1>
                         <a href='registration.php'>Inscrivez-vous.</a>
                     </p>
 
                 </article>
             </main>
         </div>
+    </center>
     </body>
 </html>
