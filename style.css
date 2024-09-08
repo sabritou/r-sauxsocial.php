@@ -212,9 +212,9 @@ pre{
 }
 
 .connexion{
-    color: rgb(255, 255, 255);
+    color: rgb(65, 65, 250);
     border: none;
-    background-color: rgb(65, 65, 250);
+    background-color: rgb(255, 255, 255);
     text-decoration: none;
     border-radius: 8px;
     padding: 6px 12px;  
