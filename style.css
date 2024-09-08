@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(10, 10, 10);
     font-family: Arial;
 }
 
@@ -84,7 +84,8 @@ body>header #user:hover ul{
   
 }
 #wrapper aside{
-    background-color: rgb(213, 213, 213);
+    background-color: rgba(255, 255, 255, 0.652);
+    border-color: white;
     flex:1;
     padding:1em;
     border: none;
@@ -105,7 +106,6 @@ body>header #user:hover ul{
     flex:3;
     padding-left:1em;
     height: 80vh;
-    overflow-y:  scroll;
 }
 #wrapper main article{
     background-color: rgb(188, 188, 188);

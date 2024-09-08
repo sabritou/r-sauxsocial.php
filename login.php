@@ -11,12 +11,15 @@ session_start();
     </head>
     <body>
        <center>
-
+             
+    
         <div id="wrapper" >
-
-         
+            
             <main>
                 <article>
+
+                
+
                     <h2>Connexion</h2>
                     <?php
                     /**
@@ -76,10 +79,10 @@ session_start();
                     ?>                     
                     <form action="login.php" method="post">
                         <input type='hidden'name='???' value='achanger'>
-                        <dl style="margin-right: 2rem;">
-                            <dt><label for='email'>E-Mail</label></dt>
+                        <dl style="margin-right: 2.50rem;">
+                            <dt><label for='email' style="margin-left: 2rem;">E-Mail</label></dt>
                             <dd><input type='email'name='email'></dd>
-                            <dt><label for='motpasse'>Mot de passe</label></dt>
+                            <dt><label for='motpasse ' style="margin-left: 2rem;">Mot de passe</label></dt>
                             <dd><input type='password'name='motpasse'></dd>
                         </dl>
                         <input type='submit' class='connexion' value='se connecter'>
