@@ -12,26 +12,39 @@ session_start();
     </head>
     <body>
         <header>
-            <img src="user.png" alt="Logo de notre réseau social"/>
-            <nav id="menu">
-                <a href="news.php">Home</a>
-                <a href="wall.php">Mur</a>
-                <a href="feed.php">Flux</a>
-                <a href="tags.php?tag_id=1">Mots-clés</a>
-                <a href="userpedpost.php">Post</a>
-            </nav>
-        </header>
-        <div id="wrapper" class='profile'>
+               
+        <nav id="menu">
+            <a href="news.php" >Home</a>
+            <a href="wall.php">Mes posts</a>
+            <a href="feed.php">Abonnements</a>
+            <a href="tags.php?tag_id=1">Mots-clés</a>
+            <a href="userpedpost.php">Post</a>
+      
+
+        </nav>
 
 
-            <aside>
-                <img src="user.png" alt="Portrait de l'utilisatrice"/>
-                <section>
-                    <h3>Profil</h3>
+    </header>
+    <div id="wrapper">
+        <aside>
+            <section>
+                <h3>Resauc</h3>
+                <p>Le résaux social pour tous !</p>
+            </section>
 
-                </section>
-            </aside>
-            <main>
+            <nav id="user">
+            <h>Profil :</h2>
+            <ul>
+                <li><a href="settings.php">Paramètres</a></li>
+                <li><a href="followers.php">Mes suiveurs</a></li>
+                <li><a href="subscriptions.php">Mes abonnements</a></li>
+            </ul>
+        </nav>
+
+        </aside>
+
+      
+        <main>
                 <?php
                 /**
                  * Etape 1: Les paramètres concernent une utilisatrice en particulier
@@ -76,13 +89,7 @@ session_start();
             
                 ?>                
 
-                <article class="Information">
-                 <dl>
-                    <a id="ok" href="followers.php">Followers</a>
-                    <a href="subscriptions.php">Suivies</a>
-                    <a href="wall.php">Publications</a>
-                 </dl>
-                </article>
+            
                 <article class='parameters'>
                     <h3>Mes paramètres</h3>
                     <dl>
@@ -100,7 +107,7 @@ session_start();
 
                 </article>
                 <article class='connexion'>
-                    <h1>Connexion</h1>
+                   
                     <dl>
                         <button class="btn_login"onclick="location.href='login.php'">Connexion a un autre compte.</button>
                     </dl>
