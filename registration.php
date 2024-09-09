@@ -11,28 +11,22 @@ session_start();
     </head>
     <body>
         <header>
-            <img src="user.png" alt="Résaux"/>
-            <nav id="menu">
-                
-            </nav>
-            <nav id="user">
-                <a href="#">Profil</a>
-                <ul>
-                    <li><a href="login.php">Login</a></li>
-                </ul>
-
-            </nav>
+          
+            
         </header>
 
         <div id="wrapper" >
 
-            <aside>
-                <h2>Présentation</h2>
-                <p>Bienvenu sur notre réseau social.</p>
-            </aside>
+           
             <main>
                 <article>
+                    <h1>Resauc</h1>
+
                     <h2>Inscription</h2>
+
+
+                
+                    
                     <?php
                     /**
                      * TRAITEMENT DU FORMULAIRE
@@ -98,7 +92,14 @@ session_start();
                         </dl>
                         <input type='submit' class='connexion' value='Inscription'>
                     </form>
+
+                
                 </article>
+
+                <article>
+                <a href="login.php" class='connexion' ;>Login</a>
+                </article>
+
             </main>
         </div>
     </body>

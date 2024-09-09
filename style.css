@@ -60,7 +60,7 @@ body>header #user ul{
     margin:0;
     margin-left:-5em;
     background-color: #ffffff;
-    border: 1px solid rgb(188, 188, 188);
+    border: 1px solid rgb(255, 255, 255);
 
     z-index: 1;
 }
@@ -80,7 +80,7 @@ body>header #user:hover ul{
     width:50em;
     margin:0 auto 2em auto;
     margin-top: 10rem;
-
+    border-color: white;
   
 }
 #wrapper aside{
@@ -108,7 +108,7 @@ body>header #user:hover ul{
     height: 80vh;
 }
 #wrapper main article{
-    background-color: rgb(188, 188, 188);
+    background: linear-gradient(43deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 46%, rgb(255, 204, 112) 100%);
     padding:3em;
     margin-bottom: 2em ;
     border-radius: 1em;
