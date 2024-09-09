@@ -5,32 +5,45 @@ session_start();
 <html lang="fr">
     <head>
         <meta charset="utf-8">
-        <title>ReSoC - Post d'usurpateur</title> 
+        <title>ReSoC - Post</title> 
         <meta name="author" content="Julien Falconnet">
         <link rel="stylesheet" href="style.css"/>
     </head>
     <body>
         <header>
-            <img src="user.png" alt="Logo de notre réseau social"/>
-            <nav id="menu">
-                <a href="news.php">Home</a>
-                <a href="wall.php">Mur</a>
-                <a href="feed.php">Flux</a>
-                <a href="tags.php?tag_id=1">Mots-clés</a>
-                <a href="userpedpost.php">Post</a>
-            </nav>
+                
+        <nav id="menu">
+            <a href="news.php" >Home</a>
+            <a href="wall.php">Mes posts</a>
+            <a href="feed.php">Abonnements</a>
+            <a href="tags.php?tag_id=1">Mots-clés</a>
+            <a href="userpedpost.php">Post</a>
+      
+
+        </nav>
+
+
+    </header>
+    <div id="wrapper">
+        <aside>
+            <section>
+                <h3>Resauc</h3>
+                <p>Le résaux social pour tous !</p>
+            </section>
+
             <nav id="user">
-                <a href="#">Profil</a>
-                <ul>
-                    <li><a href="settings.php">Paramètres</a></li>
-                    <li><a href="followers.php">Mes suiveurs</a></li>
-                    <li><a href="subscriptions.php">Mes abonnements</a></li>
-                </ul>
-            </nav>
-        </header>
+            <h>Profil :</h2>
+            <ul>
+                <li><a href="settings.php">Paramètres</a></li>
+                <li><a href="followers.php">Mes suiveurs</a></li>
+                <li><a href="subscriptions.php">Mes abonnements</a></li>
+            </ul>
+        </nav>
 
-        <div id="wrapper" >
+        </aside>
 
+      
+        <main>
             <aside>
                 <h2>Post</h2>
                 <p>Sur cette page on peut poster un message</p>
@@ -93,7 +106,7 @@ session_start();
                             echo "Impossible d'ajouter le message: " . $mysqli->error;
                         } else
                         {
-                            echo "Message posté en tant que :" . $listAuteurs[$_SESSION];
+                            echo "Message posté avec succès" . $listAuteurs[$_SESSION];
                         }
                     }
                     ?>                     

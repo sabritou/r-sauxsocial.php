@@ -11,24 +11,40 @@ session_start();
     </head>
     <body>
         <header>
-            <img src="user.png" alt="Logo de notre réseau social"/>
-            <nav id="menu">
-                <a href="news.php">Home</a>
-                <a href="wall.php">Mur</a>
-                <a href="feed.php">Flux</a>
-                <a href="tags.php?tag_id=1">Mots-clés</a>
-                <a href="userpedpost.php">Post</a>
-            </nav>
+             
+        <nav id="menu">
+            <a href="news.php" >Home</a>
+            <a href="wall.php">Mes posts</a>
+            <a href="feed.php">Abonnements</a>
+            <a href="tags.php?tag_id=1">Mots-clés</a>
+            <a href="userpedpost.php">Post</a>
+      
+
+        </nav>
+
+
+    </header>
+    <div id="wrapper">
+        <aside>
+            <section>
+                <h3>Resauc</h3>
+                <p>Le résaux social pour tous !</p>
+            </section>
+
             <nav id="user">
-                <a href="#">Profil</a>
-                <ul>
-                    <li><a href="settings.php">Paramètres</a></li>
-                    <li><a href="followers.php">Mes suiveurs</a></li>
-                    <li><a href="subscriptions.php">Mes abonnements</a></li>
-                </ul>
-            </nav>
-        </header>
-        <div id="wrapper">
+            <h>Profil :</h2>
+            <ul>
+                <li><a href="settings.php">Paramètres</a></li>
+                <li><a href="followers.php">Mes suiveurs</a></li>
+                <li><a href="subscriptions.php">Mes abonnements</a></li>
+            </ul>
+        </nav>
+
+        </aside>
+
+      
+        <main>
+
             <?php
            
             $tagId = intval($_GET['tag_id']);
@@ -52,17 +68,7 @@ session_start();
                 //@todo: afficher le résultat de la ligne ci dessous, remplacer XXX par le label et effacer la ligne ci-dessous
                
                 ?>
-                <img src="user.png" alt="Portrait de l'utilisatrice"/>
-                <section>
-                    <h3>Présentation</h3>
-                    <p>Sur cette page vous trouverez les derniers messages comportant
-                        le mot-clé <?php echo $tag['label'];?>
-                        (n° <?php echo $tagId ?>)
-                    </p>
-
-                </section>
-            </aside>
-            <main>
+             
                 <?php
                 /**
                  * Etape 3: récupérer tous les messages avec un mot clé donné

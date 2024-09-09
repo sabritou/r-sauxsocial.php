@@ -4,18 +4,32 @@ body{
 }
 
 a{text-decoration: none; 
-    color:rgb(0, 0, 0);
+    color:rgb(255, 255, 255);
+    cursor: pointer;
 }
 a:hover{
     text-decoration: underline;
 }
 
 body>header{
-    background-color: rgb(255, 255, 255);
-    border: none;
-    display:flex;
-    width:80em;
-    margin:0 auto 2em auto;    
+    outline: 0 !important;
+    border: 0 !important;
+    color: #000000;
+    transition: all ease-in-out 0.3s;
+    cursor: pointer;
+    
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.734);
+    width: 550px;
+    height: 60px;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px,
+          rgb(159, 73, 245) 5px 10px 15px;
+          
+    border-radius: 1rem;
+    margin:50px auto 2em auto;    
     padding:0;
 
 }
@@ -23,8 +37,9 @@ body>header img{
     height:5em;
 }
 body>header #menu {
-    display:flex;
-    width:50%;
+    justify-content: 1rem;
+    margin-left: 1rem;
+    display: contents;
     align-items: stretch;
     border-left: 1px solid rgb(255, 255, 255);
 }
@@ -32,11 +47,11 @@ body>header #menu a{
     flex:1;
     text-align: center;
     padding-top:2em;
-    border-right: 1px solid rgb(255, 255, 255);
+   color: white;
 }
 body>header a:hover
 {
-    background-color: rgb(189, 189, 189);
+    background-color: rgb(0, 0, 0);
 }
 body>header ul{list-style: none;}
 body>header #user
@@ -84,13 +99,13 @@ body>header #user:hover ul{
   
 }
 #wrapper aside{
-    background-color: rgba(255, 255, 255, 0.652);
+    background-color: rgb(0, 0, 0);
     border-color: white;
-    flex:1;
     padding:1em;
     border: none;
     border-radius: 1em;  
     transition-duration: 1s;
+    color: white;
 }
 
 #wrapper aside:hover{
@@ -287,3 +302,12 @@ body header nav a:hover{
 .Suivies{
     text-align: center;
 } */
+
+
+
+
+
+
+
+
+
